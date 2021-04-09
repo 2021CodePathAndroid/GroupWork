@@ -94,13 +94,53 @@ cook it. will allow user to browse recipes. Create a meal plan. Start timers whi
 ### [BONUS] Interactive Prototype
 
 ## Schema 
-[This section will be completed in Unit 9]
+
 ### Models
-[Add table of models]
+
+Model: Recipe
+| Property | Type     | Description |
+| -------- | -------- | --------    |
+| recipeId | double   | Unique id for the recipe|
+| title    | String   | Name of the recipe |
+| image    | File     | Picture of the recipe|
+| servings | Number   | Number of servings |
+| readyInMinutes| double | Cooking time |
+| ingredients| List<Ingredient>| List of ingredients|
+| instructions | String | Instructions to cook a meal |
+
+Model: Ingredient
+| Property | Type     | Description |
+| -------- | -------- | -------- |
+| name     | String     | Name of an ingredient     |
+| amount   | double     | Amount of an ingredient |
+| unitShort | String | Abreviated units of an ingredient|
+
+
+
 ### Networking
 - [Add list of network requests by screen ]
+1. Recipe Feed Screen
+-- (Read/GET) Browse recipes to the feed and details of the recipes.
 - [Create basic snippets for each Parse network request]
+--Using API.
+
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
+
+- Base URL - https://spoonacular.com/food-api/recipes/complexSearch
+
+
+| HTTP Verb | Endpoint | Description |
+| -------- | -------- | -------- |
+| GET      |    /instructionsRequired | ensure the recipes includes instructions   |
+|GET       | /maxReadyTime| filter by cook time|
+|GET       | /cuisine | filter by specific cuisine| 
+| GET      | /diet     | filter by specific diet|
+|GET       | /type     | filter by meal type|
+
 ### Links
-- Different Recipe APIs: <br>https://rapidapi.com/blog/recipe-apis/ <br>https://rapidapi.com/collection/food-apis <br> https://api2.bigoven.com/ (Might not be free) <br> Should decide which one to use. 
+- Spoonacular: https://spoonacular.com/food-api/docs#Search-Recipes-Complex
+- Spoonacular: supported cuisines: https://spoonacular.com/food-api/docs#Cuisines
+- Spoonacular: supported diets: https://spoonacular.com/food-api/docs#Diets
+- Spoonacular: supported meal types: https://spoonacular.com/food-api/docs#Meal-Types
 - Previous HackMD doc, app ideas: https://hackmd.io/igNJdjSWQH-fUJo_HwWQRQ
+

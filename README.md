@@ -28,21 +28,20 @@ cook it. will allow user to browse recipes. Create a meal plan. Start timers whi
 
 **Required Must-have Stories**
 
-* User can browse recipes
-* User can start cooking timers
-* User can create shopping lists
-* 
+- [ ] User can browse recipes
+- [ ] User can start cooking timers
+- [ ] User can create shopping lists
 * ...
 
 **Optional Nice-to-have Stories**
 
-* User can login
-* User can register 
-* User can search for recipes
-* User can favorite recipes
-* User can add ingredients from recipe detail to the shopping list
-* UI elements (Vector art, loading screens, etc)
-* User can access profile with saved recipes
+- [ ] User can login
+- [ ] User can register 
+- [ ] User can search for recipes
+- [ ] User can favorite recipes
+- [ ] User can add ingredients from recipe detail to the shopping list
+- [ ] UI elements (Vector art, loading screens, etc)
+- [ ] User can access profile with saved recipes
 * ...
 
 ### 2. Screen Archetypes

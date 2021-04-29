@@ -135,6 +135,7 @@ Model: Ingredient
 
 - Base Browse URL - https://api.spoonacular.com/recipes/random?number=20&apiKey=YOUR_API_KEY
 - Base Search URL - https://spoonacular.com/food-api/recipes/complexSearch
+
 | HTTP Verb | Endpoint | Description |
 | -------- | -------- | -------- |
 | GET      | /instructionsRequired | ensure the recipes includes instructions   |

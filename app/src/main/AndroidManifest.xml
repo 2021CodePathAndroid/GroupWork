@@ -11,27 +11,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Cookit">
         <activity android:name=".ShoppingListEdit"></activity>
-<<<<<<< HEAD
         <activity android:name=".ShoppingList"></activity>
-=======
-        <activity android:name=".ShoppingList">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-        </activity>
->>>>>>> 460c20b7cd8fdd8198e49dd888f61451e5785057
         <activity android:name=".RecipesMainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 460c20b7cd8fdd8198e49dd888f61451e5785057
     </application>
 
 </manifest>

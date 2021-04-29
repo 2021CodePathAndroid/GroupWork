@@ -10,7 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Cookit">
         <activity android:name=".ShoppingList" />
-        <activity android:name=".RecipesMainActivity">
+        <activity android:name=".RecipesMainActivity" />
+        <activity android:name=".Timer">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

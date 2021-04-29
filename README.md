@@ -30,12 +30,14 @@ Here's a walkthrough of implemented user stories:
 
 <img src='GIFs/shoppinglist.gif' title='Shopping List' width='' alt='Video Walkthrough' />
 
+<img src='GIFs/timer.gif' title='Timer' width='' alt='Video Walkthrough' />
+
 ### 1. User Stories (Required and Optional)
 
 **Required Must-have Stories**
 
 - [x] User can browse recipes
-- [ ] User can start cooking timers
+- [x] User can start cooking timers
 - [x] User can create and edit shopping lists
 * ...
 

@@ -28,7 +28,7 @@ Here's a walkthrough of implemented user stories:
 
 <img src='https://github.com/2021CodePathAndroid/cookit./blob/Kristina/GIFs/RecipeMain_v1_Demo.gif' title='Recipe Feed' width='' alt='Video Walkthrough' />
 ## Product Spec
-<img src='shoppinglist.gif' title='Shopping List' width='' alt='Video Walkthrough' />
+<img src='GIFs/shoppinglist.gif' title='Shopping List' width='' alt='Video Walkthrough' />
 
 ### 1. User Stories (Required and Optional)
 

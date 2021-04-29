@@ -26,7 +26,7 @@ cook it. will allow user to browse recipes. Create a meal plan. Start timers whi
 
 Here's a walkthrough of implemented user stories:
 
-<img src='URL to GIF' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/2021CodePathAndroid/cookit./blob/Kristina/GIFs/RecipeMain_v1_Demo.gif' title='Recipe Feed' width='' alt='Video Walkthrough' />
 ## Product Spec
 
 ### 1. User Stories (Required and Optional)

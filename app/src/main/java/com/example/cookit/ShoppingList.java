@@ -1,6 +1,5 @@
 package com.example.cookit;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -11,10 +10,11 @@ import android.os.Bundle;
 import org.apache.commons.io.FileUtils;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.cookit.adapters.ShoppListAdapter;
 
 import java.io.File;
 import java.io.IOException;

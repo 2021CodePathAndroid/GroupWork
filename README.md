@@ -22,15 +22,21 @@ cook it. will allow user to browse recipes. Create a meal plan. Start timers whi
 - **Habit:** The app can be used any time the user wants to cook a meal, browse for a recipe, create a shopping list or go grocery shopping.
 - **Scope:** The schope of original features is limitted. Users can use the app but cannot interact with other users. Down the line, user profiles can be integrated into the flow where users can save more about them, their favorite recipes, diet preferences and potentially interact with other users.
 
-## Product Spec
+## Progress GIFs
+
+Here's a walkthrough of implemented user stories:
+
+<img src='https://github.com/2021CodePathAndroid/cookit./blob/Kristina/GIFs/RecipeMain_v1_Demo.gif' title='Recipe Feed' width='' alt='Video Walkthrough' />
+
+<img src='GIFs/shoppinglist.gif' title='Shopping List' width='' alt='Video Walkthrough' />
 
 ### 1. User Stories (Required and Optional)
 
 **Required Must-have Stories**
 
-- [ ] User can browse recipes
+- [x] User can browse recipes
 - [ ] User can start cooking timers
-- [ ] User can create shopping lists
+- [x] User can create and edit shopping lists
 * ...
 
 **Optional Nice-to-have Stories**
@@ -108,6 +114,7 @@ Model: Recipe
 | readyInMinutes| double | Cooking time |
 | ingredients| List<Ingredient>| List of ingredients|
 | instructions | String | Instructions to cook a meal |
+| cuisine | List<String>| List of cuisines associated with the recipe|
 
 Model: Ingredient
 | Property | Type     | Description |
@@ -127,14 +134,14 @@ Model: Ingredient
 
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
 
-- Base URL - https://spoonacular.com/food-api/recipes/complexSearch
-
+- Base Browse URL - https://api.spoonacular.com/recipes/random?number=20&apiKey=YOUR_API_KEY
+- Base Search URL - https://spoonacular.com/food-api/recipes/complexSearch
 
 | HTTP Verb | Endpoint | Description |
 | -------- | -------- | -------- |
-| GET      |    /instructionsRequired | ensure the recipes includes instructions   |
+| GET      | /instructionsRequired | ensure the recipes includes instructions   |
 |GET       | /maxReadyTime| filter by cook time|
-|GET       | /cuisine | filter by specific cuisine| 
+|GET       | /cuisines | filter by specific cuisine| 
 | GET      | /diet     | filter by specific diet|
 |GET       | /type     | filter by meal type|
 

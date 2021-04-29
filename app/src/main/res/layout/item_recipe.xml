@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/recipe_frame"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:padding="2dp">
 
 
     <ImageView
@@ -19,9 +20,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/iv_recipePhoto"
         android:layout_marginTop="5dp"
-        tools:text="Brownies"
         android:textSize="24sp"
-        />
+        tools:text="Brownies" />
 
     <TextView
         android:id="@+id/tv_cuisine"

@@ -13,6 +13,8 @@ public class Recipe {
     double recipeID;
     String title;
     String imagePath;
+//    List<String> cuisines;
+    String cuisine;
     int servings;
     double readyInMinutes;
     List<Ingredient> ingredients;
@@ -25,6 +27,7 @@ public class Recipe {
     public Recipe(JSONObject jsonObject) throws JSONException {
         recipeID = jsonObject.getDouble("id");
         title = jsonObject.getString("title");
+        cuisine = jsonObject.getString("cuisines");
         imagePath = jsonObject.getString("image");
         servings = jsonObject.getInt("servings");
         readyInMinutes = jsonObject.getDouble("readyInMinutes");
@@ -52,6 +55,10 @@ public class Recipe {
 
     public String getTitle() {
         return title;
+    }
+
+    public String getCuisine() {
+        return cuisine;
     }
 
     public String getImagePath() {

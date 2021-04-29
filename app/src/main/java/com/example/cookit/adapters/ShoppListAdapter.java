@@ -1,4 +1,4 @@
-package com.example.cookit;
+package com.example.cookit.adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;

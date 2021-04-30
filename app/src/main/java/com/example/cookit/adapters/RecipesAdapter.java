@@ -1,18 +1,24 @@
 package com.example.cookit.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.cookit.R;
+import com.example.cookit.RecipeDetailActivity;
 import com.example.cookit.models.Recipe;
+
+import org.parceler.Parcels;
 
 import java.util.List;
 
@@ -66,6 +72,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
     // Define a viewHolder
     public class ViewHolder extends RecyclerView.ViewHolder {
 
+        RelativeLayout recipeFrame;
         TextView tvTitle;
         TextView tvCuisine;
         ImageView ivRecipePhoto;
@@ -75,6 +82,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
             tvTitle = itemView.findViewById(R.id.tv_title);
             tvCuisine = itemView.findViewById(R.id.tv_cuisine);
             ivRecipePhoto = itemView.findViewById(R.id.iv_recipePhoto);
+            recipeFrame=itemView.findViewById(R.id.recipe_frame);
         }
 
         public void bind(Recipe recipe) {
@@ -82,6 +90,17 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
             tvTitle.setText(recipe.getTitle());
             tvCuisine.setText(recipe.getCuisine());
             Glide.with(context).load(recipe.getImagePath()).into(ivRecipePhoto);
+            //Registering a clicklistener
+            recipeFrame.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    //Navigating to a new activity
+                    Intent details=new Intent(context, RecipeDetailActivity.class);
+                    details.putExtra("recipe", Parcels.wrap(recipe));
+                    context.startActivity(details);
+                    //Toast.makeText(context,"AHGAKFAFKAGVJMADGBVNMAD", Toast.LENGTH_SHORT).show();
+                }
+            });
         }
     }
 }

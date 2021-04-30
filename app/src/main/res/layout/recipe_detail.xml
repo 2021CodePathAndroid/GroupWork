@@ -12,13 +12,32 @@
         android:id="@+id/tvTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Bagguette" />
+        android:text="Bagguette (Russia)"
+        android:textSize="30sp" />
 
     <ImageView
         android:id="@+id/ivPhoto"
         android:layout_width="match_parent"
         android:layout_height="315dp"
         tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+    <TextView
+        android:id="@+id/tvCuisine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/tvDiet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/tvAuthor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
 
     <TextView
         android:id="@+id/tvDetails"

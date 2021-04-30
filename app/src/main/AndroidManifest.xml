@@ -10,13 +10,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Cookit">
-<<<<<<< HEAD
         <activity android:name=".RecipeDetailActivity"></activity>
-        <activity android:name=".ShoppingList" />
-=======
         <activity android:name=".ShoppingListEdit"></activity>
         <activity android:name=".ShoppingList"></activity>
->>>>>>> 6b8a1257ea922404b64af4567c04abc71495cb99
         <activity android:name=".RecipesMainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

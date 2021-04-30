@@ -2,6 +2,7 @@ package com.example.cookit.adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,6 +25,7 @@ import java.util.List;
 
 public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHolder>{
 
+    public final String TAG = "RecipeAdapter";
     Context context;
     List<Recipe> recipes;
 
@@ -89,7 +91,12 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
             //Take the different attributes of a tweet and bnd them into views
             tvTitle.setText(recipe.getTitle());
             tvCuisine.setText(recipe.getCuisine());
-            Glide.with(context).load(recipe.getImagePath()).into(ivRecipePhoto);
+            try {
+                Glide.with(context).load(recipe.getImagePath()).into(ivRecipePhoto);
+            } catch (Exception e) {
+                Log.i(TAG, e.toString());
+            }
+
             //Registering a clicklistener
             recipeFrame.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -98,7 +105,6 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
                     Intent details=new Intent(context, RecipeDetailActivity.class);
                     details.putExtra("recipe", Parcels.wrap(recipe));
                     context.startActivity(details);
-                    //Toast.makeText(context,"AHGAKFAFKAGVJMADGBVNMAD", Toast.LENGTH_SHORT).show();
                 }
             });
         }

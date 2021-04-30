@@ -1,5 +1,7 @@
 package com.example.cookit.models;
 
+import android.util.Log;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -10,6 +12,8 @@ import java.util.List;
 
 @Parcel
 public class Recipe {
+
+    public final String TAG = "RECIPE_class";
     double recipeID;
     String title;
     String imagePath;
@@ -29,22 +33,14 @@ public class Recipe {
         title = jsonObject.getString("title");
         cuisine = jsonObject.getString("cuisines");
         imagePath = jsonObject.getString("image");
+        if (imagePath.equals("")) {
+            imagePath = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/600px-No_image_available.svg.png";
+        }
         servings = jsonObject.getInt("servings");
         readyInMinutes = jsonObject.getDouble("readyInMinutes");
         instructions = jsonObject.getString("instructions");
         JSONArray ingredientsJSON = jsonObject.getJSONArray("extendedIngredients");
-        /*JSONDictionary
-        List<String>  info=new ArrayList<>();
-        try {
-            for (int a = 0; a < informationJSON.length(); a++) {
-                info.add("" +informationJSON.getJSONObject(a));
-                System.out.println(info.get(a));
-            }
-        }
-        catch (Exception e){
-            info=new ArrayList<>();
-        }*/
-        List<Ingredient> ingredients= new ArrayList<>();
+        ingredients = new ArrayList<>();
         for (int i = 0; i < ingredientsJSON.length(); ++i) {
             Ingredient ingredient = new Ingredient(ingredientsJSON.getJSONObject(i));
             ingredients.add(ingredient);

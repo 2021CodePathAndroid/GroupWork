@@ -16,8 +16,10 @@ public class Ingredient {
 
     public Ingredient(JSONObject jsonObject) throws JSONException {
         name = jsonObject.getString("name");
-        amount = jsonObject.getJSONObject("measures").getJSONObject("us").getDouble("amount");
-        unitShort = jsonObject.getJSONObject("measures").getJSONObject("us").getString("unitShort");
+        amount = jsonObject.getDouble("amount");
+        unitShort = jsonObject.getString("unit");
+//        amount = jsonObject.getJSONObject("measures").getJSONObject("us").getDouble("amount");
+//        unitShort = jsonObject.getJSONObject("measures").getJSONObject("us").getString("unitShort");
     }
 
     public String getName() {

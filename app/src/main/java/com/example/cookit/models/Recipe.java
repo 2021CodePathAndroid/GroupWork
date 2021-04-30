@@ -33,6 +33,17 @@ public class Recipe {
         readyInMinutes = jsonObject.getDouble("readyInMinutes");
         instructions = jsonObject.getString("instructions");
         JSONArray ingredientsJSON = jsonObject.getJSONArray("extendedIngredients");
+        /*JSONDictionary
+        List<String>  info=new ArrayList<>();
+        try {
+            for (int a = 0; a < informationJSON.length(); a++) {
+                info.add("" +informationJSON.getJSONObject(a));
+                System.out.println(info.get(a));
+            }
+        }
+        catch (Exception e){
+            info=new ArrayList<>();
+        }*/
         List<Ingredient> ingredients= new ArrayList<>();
         for (int i = 0; i < ingredientsJSON.length(); ++i) {
             Ingredient ingredient = new Ingredient(ingredientsJSON.getJSONObject(i));

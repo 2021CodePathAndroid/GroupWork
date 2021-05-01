@@ -35,4 +35,8 @@ public class Ingredient {
     public String getAmountAndUnitFormatted(){
         return String.format(amount + " " + unitShort);
     }
+
+    public String toString(){ return "Name : "+name+"\nAmount: "+amount+" "+unitShort+"\n"; }
+
+
 }

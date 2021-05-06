@@ -30,7 +30,7 @@ Here's a walkthrough of implemented user stories:
 
 <img src='GIFs/shoppinglist.gif' title='Shopping List' width='' alt='Video Walkthrough' />
 
-<img src='GIFs/timer.gif' title='Timer' width='' alt='Video Walkthrough' />
+<img src='GIFs/timer2.gif' title='Timer' width='' alt='Video Walkthrough' />
 
 ### 1. User Stories (Required and Optional)
 

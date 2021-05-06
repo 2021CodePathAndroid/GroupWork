@@ -6,19 +6,26 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.util.Locale;
 
 public class Timer extends AppCompatActivity {
 
     private EditText etTimeInput;
     private TextView tvCountDown;
-    private Button btnSet;
-    private Button btnStart;
-    private Button btnPause;
-    private Button btnCancel;
+
+    private FloatingActionButton fabSet;
+    private FloatingActionButton fabStart;
+    private FloatingActionButton fabPause;
+    private FloatingActionButton fabStop;
+
+    private ProgressBar pbTimer;
 
     private CountDownTimer CountDownTimer;
 
@@ -35,25 +42,36 @@ public class Timer extends AppCompatActivity {
 
         etTimeInput = findViewById(R.id.etTimeInput);
         tvCountDown = findViewById(R.id.tvCountDown);
-        btnSet = findViewById(R.id.btnSet);
-        btnStart = findViewById(R.id.btnStart);
-        btnPause = findViewById(R.id.btnPause);
-        btnCancel = findViewById(R.id.btnCancel);
+        fabSet = findViewById(R.id.fabSet);
+        fabStart = findViewById(R.id.fabStart);
+        fabPause = findViewById(R.id.fabPause);
+        fabStop = findViewById(R.id.fabStop);
+        pbTimer = findViewById(R.id.pbTimer);
 
-        btnSet.setOnClickListener(new View.OnClickListener() {
+        fabSet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 String input = etTimeInput.getText().toString();
 
+                // Check if the input is empty
                 if (input.length() == 0) {
                     Toast.makeText(Timer.this, "Minutes cannot be empty.", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
+                // Check if the input is greater than 24 hours
+                if (Integer.parseInt(input) > 1440) {
+                    Toast.makeText(Timer.this, "Please enter minutes less than 24 hours.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                // Convert minutes to milliseconds
                 long millisInput = Long.parseLong(input) * 60000;
 
+                // Check if the input is invalid
                 if (millisInput == 0) {
-                    Toast.makeText(Timer.this, "Please enter a positive number.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Timer.this, "Please enter positive minutes.", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -63,40 +81,37 @@ public class Timer extends AppCompatActivity {
             }
         });
 
-        btnStart.setOnClickListener(new View.OnClickListener() {
+        fabStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(!timerRunning) {
                     startTimer();
                 }
-
             }
         });
 
-        btnPause.setOnClickListener(new View.OnClickListener() {
+        fabPause.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(timerRunning){
                     pauseTimer();
                 }
-
             }
         });
 
-        btnCancel.setOnClickListener(new View.OnClickListener() {
+        fabStop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                resetTimer();
+                cancelTimer();
             }
         });
-
 
     }
 
     private void setTime(long milliseconds) {
 
         startTimeInMillis = milliseconds;
-        resetTimer();
+        cancelTimer();
 
     }
 
@@ -109,6 +124,7 @@ public class Timer extends AppCompatActivity {
             public void onTick(long millisLeftUntilFinished) {
                 timeLeftInMillis = millisLeftUntilFinished;
                 updateCountDownText();
+                pbTimer.setVisibility(View.VISIBLE);
             }
 
             @Override
@@ -130,7 +146,7 @@ public class Timer extends AppCompatActivity {
         int minutes = (int) ((timeLeftInMillis / 1000) % 3600) / 60;
         int seconds = (int) (timeLeftInMillis / 1000) % 60;
 
-        String timeLeftFormatted = String.format("%d:%02d:%02d", hours, minutes, seconds);
+        String timeLeftFormatted = String.format(Locale.getDefault(), "%02d:%02d:%02d", hours, minutes, seconds);
 
         tvCountDown.setText(timeLeftFormatted);
 
@@ -140,27 +156,38 @@ public class Timer extends AppCompatActivity {
 
         CountDownTimer.cancel();
         timerRunning = false;
+        pbTimer.setVisibility(View.INVISIBLE);
 
     }
 
-    private void resetTimer() {
+    private void cancelTimer() {
 
         timeLeftInMillis = startTimeInMillis;
+
+        if (CountDownTimer != null) {
+            CountDownTimer.cancel();
+        }
+
+        timerRunning = false;
         updateCountDownText();
+        updateTimerInterface();
+        pbTimer.setVisibility(View.INVISIBLE);
 
     }
 
     private void updateTimerInterface() {
 
         if (timerRunning) {
+
             etTimeInput.setVisibility(View.INVISIBLE);
-            btnSet.setVisibility(View.INVISIBLE);
+            fabSet.setVisibility(View.INVISIBLE);
+
         }
 
         else {
 
             etTimeInput.setVisibility(View.VISIBLE);
-            btnSet.setVisibility(View.VISIBLE);
+            fabSet.setVisibility(View.VISIBLE);
 
         }
 
@@ -182,9 +209,7 @@ public class Timer extends AppCompatActivity {
         // Save the values
         editor.apply();
 
-        if (CountDownTimer != null) {
-            CountDownTimer.cancel();
-        }
+        CountDownTimer.cancel();
 
     }
 
@@ -202,15 +227,19 @@ public class Timer extends AppCompatActivity {
         updateTimerInterface();
 
         if (timerRunning) {
+
             endTime = prefs.getLong("endTime", 0);
             timeLeftInMillis = endTime - System.currentTimeMillis();
 
             if (timeLeftInMillis < 0) {
+
                 timeLeftInMillis = 0;
                 timerRunning = false;
                 updateCountDownText();
                 updateTimerInterface();
+
             }
+
             else {
                 startTimer();
             }

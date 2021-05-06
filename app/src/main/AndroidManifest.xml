@@ -10,6 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Cookit">
+        <activity android:name=".RecipeDetailActivity"></activity>
         <activity android:name=".ShoppingListEdit"></activity>
         <activity android:name=".ShoppingList"></activity>
         <activity android:name=".RecipesMainActivity">

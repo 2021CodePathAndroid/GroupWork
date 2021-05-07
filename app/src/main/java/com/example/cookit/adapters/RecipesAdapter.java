@@ -90,7 +90,11 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
         public void bind(Recipe recipe) {
             //Take the different attributes of a tweet and bnd them into views
             tvTitle.setText(recipe.getTitle());
-            tvCuisine.setText(recipe.getCuisine());
+            if (recipe.getCuisine().isEmpty()) {
+                recipeFrame.removeView(tvCuisine);
+            } else {
+                tvCuisine.setText(recipe.getCuisine());
+            }
             try {
                 Glide.with(context).load(recipe.getImagePath()).into(ivRecipePhoto);
             } catch (Exception e) {

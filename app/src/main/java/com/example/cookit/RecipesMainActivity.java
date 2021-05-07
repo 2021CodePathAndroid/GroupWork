@@ -22,7 +22,7 @@ import java.util.List;
 import okhttp3.Headers;
 
 public class RecipesMainActivity extends AppCompatActivity {
-    public static final String YOUR_API_KEY = "9fee86db00964b1fa3268dbab654b27d";//82f2b2603b9046ac824424798aaf7ebc|a4ac8323620042179412db200f9b28d5
+    public static final String YOUR_API_KEY = "9fee86db00964b1fa3268dbab654b27d";
     public static final String RECIPES_URL = "https://api.spoonacular.com/recipes/random?number=100&apiKey=" + YOUR_API_KEY;
     public static final String TAG = "MainActivity";
     List<Recipe> recipes = new ArrayList<>();

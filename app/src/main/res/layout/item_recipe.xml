@@ -5,7 +5,13 @@
     android:id="@+id/recipe_frame"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="2dp">
+    android:clickable="true"
+    android:clipChildren="false"
+    android:background="@color/muted_light_green"
+    android:elevation="2dp"
+    android:gravity="bottom|center|start|right|top"
+    android:padding="2dp"
+    app:barrierMargin="2dp">
 
 
     <ImageView
@@ -16,8 +22,9 @@
 
     <TextView
         android:id="@+id/tv_title"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/solid_color_shape"
         android:layout_below="@+id/iv_recipePhoto"
         android:layout_marginTop="5dp"
         android:textSize="24sp"
@@ -25,9 +32,10 @@
 
     <TextView
         android:id="@+id/tv_cuisine"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_title"
+        android:background="@drawable/solid_color_shape"
         android:layout_marginTop="5dp"
         android:textSize="19sp"
         tools:text="American" />

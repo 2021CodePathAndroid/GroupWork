@@ -14,10 +14,14 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="110dp"
         android:layout_marginEnd="205dp"
+        android:backgroundTint="@color/lighter_green"
         android:ems="10"
         android:hint="Minutes"
         android:inputType="number"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:textColorHighlight="@color/lighter_green"
+        android:textColorLink="@color/lighter_green"
+        android:textCursorDrawable="@color/lighter_green" />
 
     <Button
         android:id="@+id/btnSet"
@@ -35,14 +39,20 @@
         android:layout_width="414dp"
         android:layout_height="332dp"
         android:layout_above="@+id/fabPause"
+        android:layout_below="@+id/etTimeInput"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="0dp"
-        android:layout_marginTop="153dp"
+        android:layout_marginTop="-2dp"
         android:layout_marginEnd="-3dp"
         android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/lighter_green"
+        android:foregroundTint="@color/lighter_green"
+        android:indeterminateTint="@color/lighter_green"
+        android:progressBackgroundTint="@color/lighter_green"
+        android:progressTint="@color/lighter_green"
+        android:secondaryProgressTint="@color/lighter_green"
         android:visibility="invisible" />
 
     <TextView
@@ -65,6 +75,7 @@
         android:layout_marginStart="62dp"
         android:layout_marginBottom="170dp"
         android:clickable="true"
+        app:backgroundTint="@color/lighter_green"
         app:srcCompat="@android:drawable/ic_media_play" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -75,6 +86,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="170dp"
         android:clickable="true"
+        app:backgroundTint="@color/lighter_green"
         app:srcCompat="@android:drawable/ic_media_pause" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -86,6 +98,7 @@
         android:layout_marginEnd="62dp"
         android:layout_marginBottom="170dp"
         android:clickable="true"
+        app:backgroundTint="@color/lighter_green"
         app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -97,6 +110,7 @@
         android:layout_marginTop="110dp"
         android:layout_marginEnd="130dp"
         android:clickable="true"
+        app:backgroundTint="@color/lighter_green"
         app:srcCompat="@android:drawable/ic_input_add" />
 
 </RelativeLayout>

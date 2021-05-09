@@ -45,6 +45,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="0dp"
         android:layout_marginBottom="0dp"
+        android:background="@drawable/solid_color_shape"
         android:layout_alignParentLeft="true" />
 
 

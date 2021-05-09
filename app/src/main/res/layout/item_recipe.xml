@@ -7,11 +7,12 @@
     android:layout_height="wrap_content"
     android:clickable="true"
     android:clipChildren="false"
-    android:background="@color/muted_light_green"
     android:elevation="2dp"
     android:gravity="bottom|center|start|right|top"
     android:padding="2dp"
-    app:barrierMargin="2dp">
+    app:barrierMargin="2dp"
+
+    >
 
 
     <ImageView

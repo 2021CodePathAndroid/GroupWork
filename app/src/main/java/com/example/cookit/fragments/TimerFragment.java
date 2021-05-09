@@ -230,7 +230,9 @@ public class TimerFragment extends Fragment {
         // Save the values
         editor.apply();
 
-        CountDownTimer.cancel();
+        if (CountDownTimer != null) {
+            CountDownTimer.cancel();
+        }
 
     }
 

@@ -12,8 +12,7 @@
         android:theme="@style/Theme.Cookit">
         <activity android:name=".RecipeDetailActivity"></activity>
         <activity android:name=".ShoppingListEdit"></activity>
-        <activity android:name=".ShoppingList"></activity>
-        <activity android:name=".RecipesMainActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.TimerFragment">
+
+    <EditText
+        android:id="@+id/etTimeInput"
+        android:layout_width="78dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="205dp"
+        android:ems="10"
+        android:hint="Minutes"
+        android:inputType="number"
+        android:textAlignment="center" />
+
+    <Button
+        android:id="@+id/btnSet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="125dp"
+        android:layout_marginEnd="84dp"
+        android:text="Set"
+        android:visibility="invisible" />
+
+    <ProgressBar
+        android:id="@+id/pbTimer"
+        android:layout_width="414dp"
+        android:layout_height="332dp"
+        android:layout_above="@+id/fabPause"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="153dp"
+        android:layout_marginEnd="-3dp"
+        android:layout_marginBottom="20dp"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/tvCountDown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="265dp"
+        android:text="00:00:00"
+        android:textColor="#000000"
+        android:textSize="50sp"
+        android:translationY="-50dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="62dp"
+        android:layout_marginBottom="170dp"
+        android:clickable="true"
+        app:srcCompat="@android:drawable/ic_media_play" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabPause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="170dp"
+        android:clickable="true"
+        app:srcCompat="@android:drawable/ic_media_pause" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabStop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="62dp"
+        android:layout_marginBottom="170dp"
+        android:clickable="true"
+        app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabSet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="130dp"
+        android:clickable="true"
+        app:srcCompat="@android:drawable/ic_input_add" />
+
+</RelativeLayout>

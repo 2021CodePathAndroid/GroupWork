@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.cookit.R;
 import com.example.cookit.RecipeDetailActivity;
+import com.example.cookit.fragments.RecipesDetailFragment;
 import com.example.cookit.models.Recipe;
 
 import org.parceler.Parcels;

@@ -5,7 +5,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ShoppingList">
+    tools:context=".fragments.ShoppingListFragment">
 
     <Button
         android:id="@+id/btn_add"
@@ -45,6 +45,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="0dp"
         android:layout_marginBottom="0dp"
+        android:background="@drawable/solid_color_shape"
         android:layout_alignParentLeft="true" />
 
 

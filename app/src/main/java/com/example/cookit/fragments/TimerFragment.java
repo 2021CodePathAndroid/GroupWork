@@ -1,21 +1,31 @@
-package com.example.cookit;
+package com.example.cookit.fragments;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
 import android.os.CountDownTimer;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.cookit.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.Locale;
 
-public class Timer extends AppCompatActivity {
+/**
+ * A simple {@link Fragment} subclass.
+ */
+public class TimerFragment extends Fragment {
 
     private EditText etTimeInput;
     private TextView tvCountDown;
@@ -27,7 +37,7 @@ public class Timer extends AppCompatActivity {
 
     private ProgressBar pbTimer;
 
-    private CountDownTimer CountDownTimer;
+    private android.os.CountDownTimer CountDownTimer;
 
     private boolean timerRunning;
 
@@ -35,18 +45,29 @@ public class Timer extends AppCompatActivity {
     private long timeLeftInMillis;
     private long endTime;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_timer);
+    public TimerFragment() {
+        // Required empty public constructor
+    }
 
-        etTimeInput = findViewById(R.id.etTimeInput);
-        tvCountDown = findViewById(R.id.tvCountDown);
-        fabSet = findViewById(R.id.fabSet);
-        fabStart = findViewById(R.id.fabStart);
-        fabPause = findViewById(R.id.fabPause);
-        fabStop = findViewById(R.id.fabStop);
-        pbTimer = findViewById(R.id.pbTimer);
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_timer, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        //setContentView(R.layout.activity_timer);
+
+        etTimeInput = view.findViewById(R.id.etTimeInput);
+        tvCountDown = view.findViewById(R.id.tvCountDown);
+        fabSet = view.findViewById(R.id.fabSet);
+        fabStart = view.findViewById(R.id.fabStart);
+        fabPause = view.findViewById(R.id.fabPause);
+        fabStop = view.findViewById(R.id.fabStop);
+        pbTimer = view.findViewById(R.id.pbTimer);
 
         fabSet.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,13 +77,13 @@ public class Timer extends AppCompatActivity {
 
                 // Check if the input is empty
                 if (input.length() == 0) {
-                    Toast.makeText(Timer.this, "Minutes cannot be empty.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Minutes cannot be empty.", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 // Check if the input is greater than 24 hours
                 if (Integer.parseInt(input) > 1440) {
-                    Toast.makeText(Timer.this, "Please enter minutes less than 24 hours.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Please enter minutes less than 24 hours.", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -71,7 +92,7 @@ public class Timer extends AppCompatActivity {
 
                 // Check if the input is invalid
                 if (millisInput == 0) {
-                    Toast.makeText(Timer.this, "Please enter positive minutes.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Please enter positive minutes.", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -194,11 +215,11 @@ public class Timer extends AppCompatActivity {
     }
 
     @Override
-    protected void onStop() {
+    public void onStop() {
 
         super.onStop();
 
-        SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
+        SharedPreferences prefs = getActivity().getSharedPreferences("prefs", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
 
         editor.putLong("startTimeInMillis", startTimeInMillis);
@@ -209,15 +230,17 @@ public class Timer extends AppCompatActivity {
         // Save the values
         editor.apply();
 
-        CountDownTimer.cancel();
+        if (CountDownTimer != null) {
+            CountDownTimer.cancel();
+        }
 
     }
 
     @Override
-    protected void onStart() {
+    public void onStart() {
         super.onStart();
 
-        SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
+        SharedPreferences prefs = getActivity().getSharedPreferences("prefs", Context.MODE_PRIVATE);
 
         startTimeInMillis = prefs.getLong("startTimeInMillis", 0);
         timeLeftInMillis = prefs.getLong("millisLeft", startTimeInMillis);

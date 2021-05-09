@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.cookit.fragments.ShoppingListFragment;
+
 public class ShoppingListEdit extends AppCompatActivity {
 
     EditText edit_item;
@@ -23,7 +25,7 @@ public class ShoppingListEdit extends AppCompatActivity {
 
         getSupportActionBar().setTitle("Edit item");
 
-        edit_item.setText(getIntent().getStringExtra(ShoppingList.KEY_ITEM_TEXT));
+        edit_item.setText(getIntent().getStringExtra(ShoppingListFragment.KEY_ITEM_TEXT));
 
         //When the user is done editing, they click the save button
         btn_save.setOnClickListener(new View.OnClickListener() {
@@ -32,8 +34,8 @@ public class ShoppingListEdit extends AppCompatActivity {
                 //Create an intent which will contain the results
                 Intent intent = new Intent();
                 //Pass the data (results of editing)
-                intent.putExtra(ShoppingList.KEY_ITEM_TEXT, edit_item.getText().toString());
-                intent.putExtra(ShoppingList.KEY_ITEM_POSITION, getIntent().getExtras().getInt(ShoppingList.KEY_ITEM_POSITION));
+                intent.putExtra(ShoppingListFragment.KEY_ITEM_TEXT, edit_item.getText().toString());
+                intent.putExtra(ShoppingListFragment.KEY_ITEM_POSITION, getIntent().getExtras().getInt(ShoppingListFragment.KEY_ITEM_POSITION));
                 //Set the result of the intent
                 setResult(RESULT_OK, intent);
                 //Finish activity, close the screen and go back

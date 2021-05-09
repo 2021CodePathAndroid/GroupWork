@@ -4,11 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".RecipeDetailActivity"
+        tools:context=".fragments.RecipesDetailFragment"
         android:orientation="vertical">
 
 
@@ -16,7 +15,6 @@
             android:id="@+id/tvTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/solid_color_shape"
             android:text="Bagguette (Russia)"
             android:textSize="30sp" />
 
@@ -29,21 +27,18 @@
         <TextView
             android:id="@+id/tvCuisine"
             android:layout_width="match_parent"
-            android:background="@drawable/solid_color_shape"
             android:layout_height="wrap_content"
             android:text="TextView" />
 
         <TextView
             android:id="@+id/tvDiet"
             android:layout_width="match_parent"
-            android:background="@drawable/solid_color_shape"
             android:layout_height="wrap_content"
             android:text="TextView" />
 
         <TextView
             android:id="@+id/tvAuthor"
             android:layout_width="match_parent"
-            android:background="@drawable/solid_color_shape"
             android:layout_height="wrap_content"
             android:text="TextView" />
 
@@ -51,27 +46,23 @@
             android:id="@+id/tvDishType"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/solid_color_shape"
             android:text="TextView" />
 
         <TextView
             android:id="@+id/tvSpecifics"
             android:layout_width="match_parent"
-            android:background="@drawable/solid_color_shape"
             android:layout_height="wrap_content"
             android:text="TextView" />
 
         <TextView
             android:id="@+id/tvReadyTime"
             android:layout_width="match_parent"
-            android:background="@drawable/solid_color_shape"
             android:layout_height="wrap_content"
             android:text="TextView" />
 
         <TextView
             android:id="@+id/tvIngridients"
             android:layout_width="match_parent"
-            android:background="@drawable/solid_color_shape"
             android:layout_height="wrap_content"
             android:text="TextView" />
 
@@ -79,7 +70,6 @@
             android:id="@+id/tvInstructions"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/solid_color_shape"
             android:text="One french baker" />
     </LinearLayout>
 </ScrollView>

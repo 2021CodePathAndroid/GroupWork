@@ -33,7 +33,7 @@ Here's a walkthrough of implemented user stories:
 
 <img src='https://github.com/2021CodePathAndroid/cookit./blob/main/GIFs/cookit_detail.gif' title='Recipe Feed' width='' alt='Video Walkthrough' />
 
-<img src='https://github.com/2021CodePathAndroid/cookit./blob/main/GIFs/cookit_timer.gif' title='Recipe Feed' width='' alt='Video Walkthrough' />
+<img src='https://github.com/2021CodePathAndroid/cookit./blob/main/GIFs/cookit_shopping_list.gif' title='Recipe Feed' width='' alt='Video Walkthrough' />
 
 <img src='https://github.com/2021CodePathAndroid/cookit./blob/main/GIFs/cookit_timer.gif' title='Recipe Feed' width='' alt='Video Walkthrough' />
 

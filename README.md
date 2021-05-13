@@ -20,7 +20,7 @@ cook it. will allow user to browse recipes. Create a meal plan. Start timers whi
 - **Story:** App allows users to browse cooking recipes, see the ingeredients needed for a recipe and the instructions. Users can create shopping lists.
 - **Market:** Anyone can choose to use this app. 
 - **Habit:** The app can be used any time the user wants to cook a meal, browse for a recipe, create a shopping list or go grocery shopping.
-- **Scope:** The schope of original features is limitted. Users can use the app but cannot interact with other users. Down the line, user profiles can be integrated into the flow where users can save more about them, their favorite recipes, diet preferences and potentially interact with other users.
+- **Scope:** The scope of original features is limitted. Users can use the app but cannot interact with other users. Down the line, user profiles can be integrated into the flow where users can save more about them, their favorite recipes, diet preferences and potentially interact with other users.
 
 ## Progress GIFs
 
@@ -28,6 +28,14 @@ Here's a walkthrough of implemented user stories:
 
 
 <img src='https://github.com/2021CodePathAndroid/cookit./blob/main/GIFs/RecipeMainDetail_v2_Demo.gif' title='Recipe Feed' width='' alt='Video Walkthrough' />
+
+<img src='https://github.com/2021CodePathAndroid/cookit./blob/main/GIFs/cookit_feed.gif' title='Recipe Feed' width='' alt='Video Walkthrough' />
+
+<img src='https://github.com/2021CodePathAndroid/cookit./blob/main/GIFs/cookit_detail.gif' title='Recipe Feed' width='' alt='Video Walkthrough' />
+
+<img src='https://github.com/2021CodePathAndroid/cookit./blob/main/GIFs/cookit_timer.gif' title='Recipe Feed' width='' alt='Video Walkthrough' />
+
+<img src='https://github.com/2021CodePathAndroid/cookit./blob/main/GIFs/cookit_timer.gif' title='Recipe Feed' width='' alt='Video Walkthrough' />
 
 <img src='https://github.com/2021CodePathAndroid/cookit./blob/Kristina/GIFs/RecipeMain_v1_Demo.gif' title='Recipe Feed' width='' alt='Video Walkthrough' />
 

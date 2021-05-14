@@ -22,6 +22,9 @@ cook it. will allow user to browse recipes. Create a meal plan. Start timers whi
 - **Habit:** The app can be used any time the user wants to cook a meal, browse for a recipe, create a shopping list or go grocery shopping.
 - **Scope:** The scope of original features is limitted. Users can use the app but cannot interact with other users. Down the line, user profiles can be integrated into the flow where users can save more about them, their favorite recipes, diet preferences and potentially interact with other users.
 
+## Slide decka and info
+https://docs.google.com/presentation/d/18cQuoDQ6VRzbLvu2kpNJ06OXocNELWSpOut-MyYkDT8/edit?usp=sharing
+
 ## Progress GIFs
 
 Here's a walkthrough of implemented user stories:
@@ -36,14 +39,6 @@ Here's a walkthrough of implemented user stories:
 <img src='https://github.com/2021CodePathAndroid/cookit./blob/main/GIFs/cookit_shopping_list.gif' title='Recipe Feed' width='' alt='Video Walkthrough' />
 
 <img src='https://github.com/2021CodePathAndroid/cookit./blob/main/GIFs/cookit_timer.gif' title='Recipe Feed' width='' alt='Video Walkthrough' />
-
-<img src='https://github.com/2021CodePathAndroid/cookit./blob/Kristina/GIFs/RecipeMain_v1_Demo.gif' title='Recipe Feed' width='' alt='Video Walkthrough' />
-
-<img src='GIFs/shoppinglist.gif' title='Shopping List' width='' alt='Video Walkthrough' />
-
-<img src='https://github.com/2021CodePathAndroid/cookit./blob/main/GIFs/RecipeMainDetail_v2_Demo.gif' title='Recipe Feed' width='' alt='Video Walkthrough' />
-
-<img src='GIFs/timer2.gif' title='Timer' width='' alt='Video Walkthrough' />
 
 ### 1. User Stories (Required and Optional)
 
